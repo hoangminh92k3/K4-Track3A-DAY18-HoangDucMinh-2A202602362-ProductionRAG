@@ -69,10 +69,11 @@ def run_query(query: str, search: HybridSearch, reranker: CrossEncoderReranker) 
     contexts = [r.text for r in reranked] if reranked else [r.text for r in results[:3]]
 
     from config import OPENAI_API_KEY
-    if OPENAI_API_KEY and contexts:
+    has_valid_key = bool(OPENAI_API_KEY and isinstance(OPENAI_API_KEY, str) and OPENAI_API_KEY.startswith("sk-") and len(OPENAI_API_KEY) > 20)
+    if has_valid_key and contexts:
         try:
             from openai import OpenAI
-            client = OpenAI()
+            client = OpenAI(api_key=OPENAI_API_KEY)
             context_str = "\n\n".join(contexts)
             resp = client.chat.completions.create(model="gpt-4o-mini", messages=[
                 {"role": "system", "content": "Trả lời CHỈ dựa trên context. Nếu không có → nói 'Không tìm thấy.'"},

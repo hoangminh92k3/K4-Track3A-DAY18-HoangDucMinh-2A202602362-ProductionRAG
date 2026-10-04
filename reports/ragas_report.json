@@ -1,0 +1,91 @@
+{
+  "aggregate": {
+    "faithfulness": 0.7158333333333333,
+    "answer_relevancy": 0.7831008063397202,
+    "context_precision": 0.9374999999427083,
+    "context_recall": 0.8166666666666667
+  },
+  "num_questions": 20,
+  "failures": [
+    {
+      "question": "Bao lâu phải đổi mật khẩu một lần?",
+      "worst_metric": "faithfulness",
+      "score": 0.3958,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, and verify factual grounding.",
+      "worst_score": 0.0
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "worst_metric": "context_recall",
+      "score": 0.6611,
+      "diagnosis": "Missing relevant chunks",
+      "suggested_fix": "Improve chunking or expand retrieval with BM25/dense hybrid search.",
+      "worst_score": 0.0
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "worst_metric": "faithfulness",
+      "score": 0.6908,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, and verify factual grounding.",
+      "worst_score": 0.4
+    },
+    {
+      "question": "Nghỉ phép không lương 20 ngày cần ai phê duyệt?",
+      "worst_metric": "faithfulness",
+      "score": 0.6959,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, and verify factual grounding.",
+      "worst_score": 0.5
+    },
+    {
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "worst_metric": "faithfulness",
+      "score": 0.706,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, and verify factual grounding.",
+      "worst_score": 0.0
+    },
+    {
+      "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+      "worst_metric": "faithfulness",
+      "score": 0.746,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, and verify factual grounding.",
+      "worst_score": 0.5
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "worst_metric": "faithfulness",
+      "score": 0.7478,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, and verify factual grounding.",
+      "worst_score": 0.0
+    },
+    {
+      "question": "Nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI không?",
+      "worst_metric": "answer_relevancy",
+      "score": 0.75,
+      "diagnosis": "Answer doesn't match question",
+      "suggested_fix": "Improve prompt template and ground the answer in the retrieved context.",
+      "worst_score": 0.0
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "worst_metric": "context_recall",
+      "score": 0.7639,
+      "diagnosis": "Missing relevant chunks",
+      "suggested_fix": "Improve chunking or expand retrieval with BM25/dense hybrid search.",
+      "worst_score": 0.5
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "worst_metric": "context_precision",
+      "score": 0.8284,
+      "diagnosis": "Too many irrelevant chunks",
+      "suggested_fix": "Add reranking and metadata filters to reduce noise.",
+      "worst_score": 0.5
+    }
+  ]
+}
